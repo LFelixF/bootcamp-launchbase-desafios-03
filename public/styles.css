@@ -1,0 +1,204 @@
+@import "https://fonts.googleapis.com/css2?family=Roboto&display=swap";
+
+:root {
+    --color-orange: rgb(127, 57, 184);
+    --color-grey: #282a36;
+}
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+body {
+    background: #282a36;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+header {
+    padding: 30px;
+    border-bottom: 1px solid #333;
+    background: rgba(0, 0, 0, 0.1);
+}
+.links {
+    text-align: center;
+}
+.links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 28px;
+    margin: 0 30px;
+}
+.links a:hover {
+    color: var(--color-orange);
+    transition: color 200ms;
+}
+
+#wrapper {
+    text-align: center;
+    margin: 30px 0;
+}
+
+#wrapper img {
+    height: 300px;
+    border: 3px solid rgba(0, 0, 0, 0.301);
+    border-radius: 50%;
+}
+
+#wrapper h1 {
+    font-size: 40px;
+    line-height: 50px;
+    margin-top: 20px;
+}
+
+#wrapper p {
+    max-width: 500px;
+    font-size: 20px;
+    line-height: 30px;
+    margin: 20px auto 10px;
+}
+
+#list ul{
+    background: rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+#list li{
+    font-size: 20px;
+    line-height: 30px;
+    font-style: italic;
+}
+
+#links-footer a {
+    border-bottom: 1px solid var(--color-orange);
+}
+
+/* ======== CARDS ========= */
+
+.cards {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.card {
+    border: 3px solid var(--color-orange);
+    height: 390px;
+    border-radius: 18px;
+    cursor: pointer;
+    position: relative;
+}
+
+.card:hover {
+    border: 5px solid white;
+    color: black;
+    background-color: white;
+    transition: 100ms;
+}
+
+.card .card-img img {
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+    border-bottom: 2px solid var(--color-orange);
+}
+
+.card .card-container h1{
+    font-size: 25px;
+    line-height: 35px;
+    text-align: center;
+    margin-top: 20px;
+    height: 130px;
+}
+
+.card .card-info {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.card .card-info p {
+    font-size: 15px;
+    line-height: 25px;
+    padding: 5px 10px;
+}
+
+.card .card-info .card-time {
+    font-size: 10px;
+    font-style: italic;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+/* ======== MODAL ========= */
+
+.modal-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal {
+    background-color: white;
+    width: 90%;
+    height: 90%;
+    margin: 5vh auto;
+    position: relative;
+}
+
+.modal .modal_max-close {
+    color: black;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+.modal .modal_max-close span {
+    cursor: pointer;
+    margin-left: 3px;
+}
+
+.modal .modal_max-close span:hover {
+    background-color: red;
+    padding: 3px;
+    border-radius: 3px;
+    transition: 100ms;
+}
+
+.modal .modal-content iframe {
+    position: absolute;
+    width: 100%;
+    height: 93%;
+    bottom: 0;
+}
+
+/* ======== MODAL ACTIVE ========= */
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal.open-max {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+/* ======== ERROR PAGE =======*/ 
+
+.error {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
