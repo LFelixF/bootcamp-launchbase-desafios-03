@@ -6,28 +6,27 @@
 
 {% block content %}
     <div id="wrapper">
-        <img src="https://cdn-images-1.medium.com/max/1200/1*TkXVfLTwsHdwpUEjGzdi9w.jpeg" alt="Logo">
+        <img src="{{about.avatar_url}}" alt="Logo de {{about.name}}">
 
-        <h1>Rocketseat</h1>
-        <p>Nossa missão é capacitar pessoas que buscam se profissionalizar na programação independente do seu momento ou nível de conhecimento.</p>
+        <h1>{{about.name}}</h1>
+        <p>{{about.discription}}</p>
 
         <div id="list">
-            <p>Principais Tecnologias</p>
+            <p>{{about.list.name}}</p>
 
             <ul>
-                <li>HMTL</li>
-                <li>CSS</li>
-                <li>Javascript</li>
-                <li>Node.js</li>
+                {% for object in about.list.technologies %}
+                    <li>{{object.name}}</li>
+                {% endfor %}
             </ul>
         </div>
     </div>
 
     <footer>
         <div id="links-footer" class="links">
-            <a href="">Facebook</a>
-            <a href="">Instagram</a>
-            <a href="">Github</a>
+            {% for link in about.links%}
+                <a href="{{link.url}}">{{link.name}}</a>
+            {% endfor %}
         </div>
     </footer>
 {% endblock %}
