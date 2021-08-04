@@ -132,6 +132,22 @@ header {
     border-radius: 10px;
 }
 
+/* ======== ARTICLE ========= */
+
+.article {
+    position: relative;
+    height: 100vh;
+}
+
+.article iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+}
+
+
 /* ======== MODAL ========= */
 
 .modal-overlay {

@@ -11,7 +11,9 @@ server.listen(5000, () => {
 server.set("view engine", "njk")
 
 nunjucks.configure("views", {
-    express: server
+    express: server,
+    autoescape: false,
+    noCache: true
 })
 
 server.use(express.static("public"))
@@ -40,10 +42,24 @@ server.get("/", (req, res) => {
     return res.render("about", {about: data})
 })
 
-server.get("/content", (req, res) => {
-    return res.render("content", {items: articles})
+server.get("/articles", (req, res) => {
+    return res.render("articles", {items: articles})
+})
+
+server.get("/article/:id", (req, res) => {
+    const id = req.params.id
+
+    const article = articles.find((article) => {
+        return article.id == id
+    })
+
+    if(!article) {
+        return res.status(404).render("not-found")
+    }
+
+    return res.render("article", {item: article})
 })
 
 server.use(function(req, res) {
-    res.status(404).render("not-found");
-});
+    res.status(404).render("not-found")
+})
